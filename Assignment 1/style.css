@@ -1,0 +1,178 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+section 
+{
+    margin: auto;
+    max-width: 600px;
+    margin-top: 30px;
+    background-color: blue;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.signin-box
+{
+    margin: 20px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+h1{
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 550;
+    color: rgb(58, 58, 58);
+}
+
+span
+{
+    color: rgb(56, 56, 248);
+}
+
+form label{
+    font-size: 13px;
+    font-weight: 550;
+    color: rgb(82, 81, 81);
+}
+
+form input
+{
+    font-weight: 500;
+    border: 2px solid rgb(155, 154, 154);
+    padding: 15px 0px 15px 15px;
+    border-radius: 3px;
+    width: 90%;
+}
+
+.signin{
+    border: none;
+    width: 95%;
+    background-color: rgb(41, 41, 248);
+    color: white;
+    font-size: 15px;
+    font-weight:600;
+    border-radius: 3px;
+    letter-spacing: 2px;
+    padding: 17px 0px 17px 0px;
+}
+
+.or-line
+{
+    border-bottom: 2px solid rgb(206, 203, 203);
+    text-align: center;
+    width: 95%;
+    height: 10px;
+    margin: 10px 0px 10px 0px ;
+}
+
+.or-line span
+{
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: white;
+    font-weight: 550;
+    color: grey;
+}
+
+button{
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.google{
+    width: 95%;
+    border:2px solid rgb(41, 41, 248);
+    background-color: white;
+    color: rgb(41, 41, 248);
+    font-size: 14px;
+    font-weight:600;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    
+}
+.google .gmail-sigin
+{
+    margin-top: -15px;
+    width: 45%;
+    margin-left: 30%;
+}
+
+.google .gmail-sigin img
+{
+    float:left;
+    margin-top: 13px;
+}
+
+.google .gmail-sigin div p
+{
+    padding-top: 20px;
+}
+
+button::after
+{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+
+.github{
+    width: 95%;
+    border:2px solid rgb(41, 41, 248);
+    background-color: rgb(41, 41, 248);
+    color: white;
+    font-size: 14px;
+    font-weight:600;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    
+}
+.github .github-signin
+{
+    width: 45%;
+    margin-left: 30%;
+}
+
+
+.github .github-signin img
+{
+    float:left;
+    margin-left:auto;
+    margin-top: -5px;
+    padding: auto;
+
+}
+
+
+.github .github-signin div p
+{
+    padding-top: 5px;
+}
+
+a
+{
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+@media all and (max-width:400px)
+{
+    .google .gmail-sigin 
+    {
+        margin-left: auto;
+        width: 100%;
+    }
+    .github .github-signin
+    {
+        margin-left: auto;
+        width: 100%;
+    }
+    
+}
