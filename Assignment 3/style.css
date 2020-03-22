@@ -145,8 +145,6 @@ section
     .wrapper .head .head-data{
         clear: both;
         display: block;
-        border: 1px solid blue;
-
     }
 
     .wrapper .head img
