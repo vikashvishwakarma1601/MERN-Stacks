@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <section class="header">
+            <header>
+                <h1>todos</h1>
+                <div id="line"></div>
+                <div>
+                    <div class="checkbox">
+                        <input id="completeAll" type="checkbox" onchange="completeAllAction()">
+                    </div>
+                    <input id="todoText" type="text" placeholder="What needs to be done?" autofocus >
+                </div>
+            </header>
+        </section>
+        <section class="todos">
+            <ul id="todo-list-container">
+                             
+            </ul><br>
+            
+            <footer>
+                <div id="line"></div>
+                <span class="itemsCount">0 items left</span>
+                <ul class="actions">
+                    <li>All</li>
+                    <li>Active</li>
+                    <li>Completed</li>
+                </ul>
+                <a href="#" class="clearCompleted" onclick="clearCompleted()">Clear completed</a>
+            </footer>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
