@@ -118,9 +118,10 @@ function makeItComplete(event,id)
 }
 
 
-function editTitle()
+function editTitle(id)
 {
-    document.querySelector('.todo-list-title').setAttribute('contenteditable','') // Setting the 'contenteditable' attribute to title tag
+    console.log(id)
+    document.getElementById(id).setAttribute('contenteditable','') // Setting the 'contenteditable' attribute to title tag
 }
 
 function takeNewTitle(event,id)
@@ -159,18 +160,22 @@ function renderTodos(flag)
     let countUncompleted = todos.filter(todo=>todo.completed !=true) // Filtering  Uncompleted Todos
     const todoElements =  todos.map(todo=>{
         return `<li class="list-group-item">
-            <div class="row">
-                <div class="todo-list-checkbox">
-                    <input onchange="makeItComplete(event,${todo.id})" type="checkbox" ${todo.completed ? 'checked' : ''} />
-                </div>
-                <div class="todo-list-title" ondblclick = "editTitle()" onblur ="takeNewTitle(event,${todo.id})">${todo.title}</div>
-                <div class="todo-list-btn">
-                    <button onclick="deleteTodo(event,${todo.id})" class="deleteBtn" >delete</button>
-                </div>
+                <div class="row">
+                    <div class="todo-list-checkbox">
+                        <input onchange="makeItComplete(event,${todo.id})" type="checkbox" ${todo.completed ? 'checked' : ''} />
+                    </div>
+                    <div class="todo-list-title" id=${todo.id} ondblclick = "editTitle(${todo.id})" onblur ="takeNewTitle(event,${todo.id})">${todo.title}</div>
+                    <div class="todo-list-btn">
+                        <button onclick="deleteTodo(event,${todo.id})" class="deleteBtn" >delete</button>
+                    </div>
                 </div>
         </li>`
     })
-    document.querySelector('#completeAll').style.visibility = 'visible'
+    document.querySelector('.checkbox').style.display = 'block'
     document.querySelector('#todo-list-container').innerHTML = todoElements.join(" ")
+    if(todos.length==0)
+    {
+        document.querySelector('.checkbox').style.display = 'none'
+    }
     document.querySelector('.itemsCount').innerText = `${countUncompleted.length} items` // For showing how many uncompleted todos left
 }
