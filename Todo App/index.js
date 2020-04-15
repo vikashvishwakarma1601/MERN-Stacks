@@ -91,8 +91,9 @@ class TodoService {
 const todo = new TodoService()
 
 
+if(window.localStorage.length!=0){
 renderTodos('All') // rendering todos for first time if any todos is available in localStorage 
-
+}
 // Accessing Input Field
 let inputData = document.querySelector('#todoText')
 
