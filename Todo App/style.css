@@ -14,7 +14,8 @@ body {
     width: 600px;
     margin: auto;
     margin-top: 10%;
-    background-color: white;
+    /* background-color: white; */
+    background-color: #6a82fb;
     border-radius: 10px;
     box-shadow: 6px 6px 12px #4444b3, -6px -6px 12px #b13c3c;
     font-family: 'Nunito Sans', sans-serif;
@@ -121,25 +122,32 @@ ul#todo-list-container {
     list-style-type: none;
     width: 100%;
     font-weight: 600;
-    padding: 10px;
-    margin-top: -5px;
+    margin-bottom: 5px;
     box-sizing: border-box;
     color: rgb(32, 32, 32);
     border-radius: 3px;
     background-color: rgba(255, 112, 68, 0.815);
-    box-shadow: 3px 1px 12px #95364a,
-        -3px -1px 12px #ff82b0;
+    box-shadow: 3px 1px 5px #95364a,
+        -2px -1px 5px #ff82b0;
 }
-
+.todos ul#todo-list-container li:hover{
+    box-shadow: inset 5px 5px 4px #95364a,inset -5px -5px 4px #b14058;
+    transition: all 0.5s;
+}
 
 ul .list-group-item .row {
     text-align: center;
     font-size: 18px;
+    padding: 10px;
     width: 100%;
     letter-spacing: 1px;
     display: grid;
     grid-template-columns: 50px auto 90px;
     justify-content: space-between;
+}
+
+.row .todo-list-title{
+    word-break: break-all;
 }
 
 .todo-list-checkbox {
