@@ -7,9 +7,6 @@ class Todo {
     }
 }
 
-
-
-
 // Creating Todo Service Class and Todo service Methods
 
 class TodoService {
@@ -17,9 +14,11 @@ class TodoService {
         this.todos = []
         this.todoId = 0
     }
-
-    createTodo(title) {
+    fetchTodos()
+    {
         if(window.localStorage.length!=0){this.todos = JSON.parse(window.localStorage.getItem('todos'))}
+    }
+    createTodo(title) {
         const newTodo = new Todo(this.todoId, title)
         this.todos = this.todos.concat(newTodo)
         window.localStorage.setItem('todos', JSON.stringify(this.todos))
@@ -90,10 +89,11 @@ class TodoService {
 // Creating TodoService Instance/Object
 const todo = new TodoService()
 
-
 if(window.localStorage.length!=0){
+todo.fetchTodos()
 renderTodos('All') // rendering todos for first time if any todos is available in localStorage 
 }
+
 // Accessing Input Field
 let inputData = document.querySelector('#todoText')
 
@@ -149,7 +149,6 @@ function clearCompleted(event) {
     renderTodos('All')
 }
 
-let completeAllBtn = document.querySelector('#completeAll')
 
 function renderTodos(flag) {
         let todos = todo.fetchTodo(flag) // Fetching all todos by flag value
@@ -172,8 +171,10 @@ function renderTodos(flag) {
         if(todos.length===0)
         {
             document.querySelector('.checkbox').style.display = 'none'
-            document.querySelector('#completeAll').checked = false
         }
+        let checkAllCompleted = todos.every(todo=>todo.completed)
+        document.querySelector('#completeAll').checked = checkAllCompleted
+
         document.querySelector('.itemsCount').innerText = `${countUncompleted.length} items` // For showing how many uncompleted todos left
     
 }
